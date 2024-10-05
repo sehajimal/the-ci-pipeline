@@ -1,0 +1,10 @@
+#!/bin/bash
+git add .
+git commit -m "$1"
+git push origin
+if [[ "$1" = "" ]]
+then
+ls -al
+else
+ls -al *.$1
+fi
