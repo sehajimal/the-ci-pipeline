@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     if (argc == 1)                      //no arguments passed by user
     {
-        printf("Usage: quiz [-#] [<answer>] \n Try 'quiz --help' for more information.\n");
+        printf("Usage: quiz [-#] [<answer>]\nTry 'quiz --help' for more information.\n");
         return EXIT_FAILURE;
     }
 
@@ -46,15 +46,25 @@ int main(int argc, char *argv[])
             return EXIT_SUCCESS;
         }
 
-        else if (strcmp(argv[1], "--help") == 0)
+        else if (strcmp(argv[1], "--help") == 0)    //Linux-style help
         {
-            printf("What is the command used to move a snapshot of a file to the 'staging area'?\n");    //Linux-style help
+            printf("Usage: quiz [-#] [<answer>]\nGet questions and try to answer it correctly\n\n");
+            printf("-1              Outputs linux question\n");
+            printf("-2              Outputs C question\n");
+            printf("-3              Outputs git question\n");
+            printf("-1 [answer]     Answering question 1\n");
+            printf("-2 [answer]     Answering question 2\n");
+            printf("-3 [answer]     Answering question 3\n\n");
+            printf("Examples:\n");
+            printf("quiz -1         Text of question 1\n");
+            printf("quiz -3         Text of question 3\n");
+            printf("quiz -1 touch   Answering question 1 (Answer = touch)\n"); 
             return EXIT_SUCCESS;
         }
 
         else
         {
-            printf("Usage: quiz [-#] [<answer>] \n Try 'quiz --help' for more information.\n");    //bad flag
+            printf("Usage: quiz [-#] [<answer>]\nTry 'quiz --help' for more information.\n");    //bad flag
             return EXIT_FAILURE;
         }
     }
@@ -101,12 +111,6 @@ int main(int argc, char *argv[])
                 printf("Incorrect, please try again\n");
             }
             return EXIT_SUCCESS;
-        }
-
-        else
-        {
-            printf("Usage: quiz [-#] [<answer>] \n Try 'quiz --help' for more information.\n");    //bad flag
-            return EXIT_FAILURE;
         }
     }
 }
