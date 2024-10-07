@@ -1,10 +1,9 @@
 #!/bin/bash
 git add .
 git commit -m "$1"
+git push origin
 if [[  $# -ge 2  ]]
 then
     git tag $2
     git push origin $2
-else
-    git push origin
 fi
