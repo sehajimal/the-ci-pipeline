@@ -69,11 +69,11 @@ int main(int argc, char *argv[])
         }
     }
 
-    if (argc == 3)                  //user is trying to enter their answer or they are entering a bad flag
+    if (argc == 3)                  //user is trying to enter their answer
     {
         if (strcmp(argv[1], "-1") == 0)              //checks if user is answering questions 1,2 or 3
         {
-            if (strcmp(argv[2], answerNumOne) == 0)         
+            if (strcmp(argv[2], answerNumOne) == 0)         //comparing users answer to actual answer
             {
                 printf("Correct!\n");   
             }
